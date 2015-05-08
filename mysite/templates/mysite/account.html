@@ -1,0 +1,126 @@
+
+{% load static  %}
+{% include 'mysite/header.html' %}
+<link href="{% static "mysite/reg.css" %}" rel="stylesheet">
+<div class="container" id="wrap" style="width:800px;">
+<div class="container" id="wr">
+  <br>
+  <div class="container" class="row">
+    <div class="container col-md-5  toppad  pull-right col-md-offset-3 ">
+     <A href="{% url "mysite:edit" %}" >修改資料</A>
+     &nbsp;|
+     <A href="{% url "mysite:logout" %}" >註銷</A>     
+
+   </div>
+   <br>
+   <br>
+   <div style="width:650px;margin-left:auto;margin-right:auto;" class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4" >
+
+
+    <div  id="account" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><small>賬號:{{user.username}}</small></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">     
+
+          <div class=" col-md-12 col-lg-12 "> 
+            <table class="table table-user-information">
+              <tbody>
+
+                <div class="row">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <small>密碼:</small>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <small>{{user.password}}</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <small>余額:</small>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <small>{{user.balance}} 金币</small>
+                    </div>
+                  </div>
+                </div>
+
+                
+                
+                <div class="row">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <small>Email:</small>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <small>{{user.email}}</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <small>邀請人数:</small>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <small>{{user.promo.invites}}</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <small>點擊人数:</small>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <small>{{user.promo.clicks}}</small>
+                    </div>
+                  </div>
+                </div>
+                                   
+                
+              </tbody>
+            </table>                 
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="panel">
+          <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-link"></i> <font color='green'>鏈接邀請 </font></h3>
+          </div>
+          <div class="panel-body">
+          你可以複製你的邀請鏈接發送給你的好友，每邀請一位好友，將獲得10金幣的獎勵，你的邀請鏈接：<br><br>
+            
+            <input type="text" class="form-control" value="http://127.0.0.1:8000/mv/reg/{{user.id}}">
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+

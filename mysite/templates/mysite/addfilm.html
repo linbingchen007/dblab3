@@ -1,0 +1,83 @@
+{% load static %}
+{%  include 'mysite/header.html' %}
+
+<div class="container" style="width:700px;">
+<form class="form-horizontal"  method="POST" action="{% url "mysite:handleaddfilm" %}" id="submitform" role="form" style="
+    margin-left: 4%;">
+{% csrf_token %}
+  <fieldset>
+    <div id="legend">
+      <legend class="">影片添加頁面</legend>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="filmname">影片名</label>
+      <div class="controls">
+        <input type="text" id="filmname" name="filmname" placeholder="" class="input-xlarge">              
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="price">价格(元)</label>
+      <div class="controls">
+        <input type="text" id="price" name="price" placeholder="" class="input-xlarge">              
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="tags">影片标签</label>
+      <div class="controls">
+        <input type="text" id="tags" name="tags" placeholder="" class="input-xlarge">
+        <p class="help-block">多个用#隔开</p>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="categories">影片分类</label>
+      <div class="controls">
+        <input type="text" id="categories" name="categories" placeholder="" class="input-xlarge">
+        <p class="help-block">多个用#隔开</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="covurl">封面地址</label>
+      <div class="controls">
+        <input type="text" id="covurl" name="covurl" placeholder="" class="input-xlarge">        
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="picurls">图片地址</label>
+      <div class="controls">
+        <input type="text" id="picurls" name="picurls" placeholder="" class="input-xlarge">  
+        <p class="help-block">多个用#隔开 </p>     
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="vidurls">影片地址</label>
+      <div class="controls">
+        <input type="text" id="vidurls" name="vidurls" placeholder="" class="input-xlarge">
+        <p class="help-block">多个用#隔开</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <input type="submit"  class="btn btn-success" value="添加">
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+
+

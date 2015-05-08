@@ -1,0 +1,45 @@
+<!--Inspired by http://tutorialzine.com/2012/02/apple-like-login-form/ - Apple-like Login Form with CSS 3D Transforms -->
+{% include 'mysite/header.html' %}
+
+ {% load staticfiles  %}
+ <link href="{% static "mysite/login.css" %}" rel="stylesheet">
+ <div  id ="wrap">
+<div class="container" id="wr" style="
+       height: 380px;
+      " >
+	<div class="row">
+    	<div class="container" id="formContainer">
+
+          <form class="form-signin" id="login" action="{% url "mysite:handlelogin" %}"  method="POST" role="form" style="text-align:center" >
+           {% csrf_token %}    
+            <h3 class="form-signin-heading">登陸頁面</h3>
+            <a href="#" id="flipToRecover" class="flipLink">
+              <div id="triangle-topright"></div>
+            </a>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username" required autofocus style="
+                height: 44px;
+                    width: 250px;margin-left: auto;
+  margin-right: auto;
+                    ">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required style="
+                height: 44px;
+                    width: 250px;margin-left: auto;
+  margin-right: auto;
+                    ">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" style="
+                    width: 250px;
+                       margin-left: auto;
+  margin-right: auto;
+                        ">登陸</button>
+            <a class="btn btn-lg btn-primary btn-block" href="{% url "mysite:reg" %}" style="
+                    width: 250px;
+                        margin-left: auto;
+  margin-right: auto;
+                        ">註冊</a>
+          </form>         
+
+
+        </div> <!-- /container -->
+	</div>
+</div>
+</div>

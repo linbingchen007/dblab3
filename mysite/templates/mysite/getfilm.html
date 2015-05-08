@@ -1,0 +1,54 @@
+{% load static %}
+{% include 'mysite/header.html' %}
+
+   <div class="container" style="width:750px;">
+   {% if subscribed %} 1 {% endif %}
+<h1>影片名稱：{{title}}</h1> 
+观看量：{{views}}<br>
+收藏数：{{likes}}<br>
+影片标签：
+        {% if tags %}
+  {% for onepart in tags %}
+    <a href="">{{onepart}}</a>
+    &nbsp;&nbsp;
+    
+  {% endfor %}
+{% endif %}
+<br>
+影片类别：
+        {% if categories %}
+  {% for onepart in categories %}
+    <a href="">{{onepart}}</a>
+    &nbsp;&nbsp;
+    
+  {% endfor %}
+{% endif %}
+        <img border="0" width="700" src="{{covurl}}">
+
+<br>
+<span id="main">
+影片截图：<br >
+  {% for onepart in picurls %}
+    <img border="0" width="350" src="{{onepart}}">
+    
+  {% endfor %}
+<br>
+在线播放：<br >
+{% if vidurls %}
+	{% for onepart in vidurls %}
+		<video width="700" height="394" controls>
+		<source src="{{onepart}}" type="video/mp4">
+		Your browser does not support the video tag.
+		</video>
+		<br>
+		
+	{% endfor %}
+{% endif %}
+影片下载地址:
+{% if vidurls %}
+    {% for onepart in vidurls %}
+    <a href="{{onepart}}" target="_blank" >&nbsp;&nbsp;&nbsp;{{forloop.counter}}&nbsp;&nbsp;&nbsp; </a>
+    {% endfor %}
+    {% endif %}
+    <br>
+</div>
